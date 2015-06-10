@@ -14,12 +14,13 @@
 		775603A71B26DAA000E7E2BF /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772308D81B26CE59007ED948 /* iflyMSC.framework */; };
 		775603A81B26DAB000E7E2BF /* libSunFlower.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 772308DB1B26CE59007ED948 /* libSunFlower.a */; };
 		775603AB1B26E60900E7E2BF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775603AA1B26E60900E7E2BF /* AddressBook.framework */; };
-		775603AE1B26F20D00E7E2BF /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 775603AD1B26F20D00E7E2BF /* IATConfig.m */; };
 		775603E51B27D19C00E7E2BF /* do_iFlyVoice_App.m in Sources */ = {isa = PBXBuildFile; fileRef = 772308D11B26CCD8007ED948 /* do_iFlyVoice_App.m */; };
 		775603E61B27D19C00E7E2BF /* do_iFlyVoice_SM.m in Sources */ = {isa = PBXBuildFile; fileRef = 772308D41B26CCD8007ED948 /* do_iFlyVoice_SM.m */; };
-		775603E71B27D1B200E7E2BF /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 775603AD1B26F20D00E7E2BF /* IATConfig.m */; };
-		775603EA1B27E69A00E7E2BF /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 775603E91B27E69A00E7E2BF /* ISRDataHelper.m */; };
-		775603EB1B27E6BF00E7E2BF /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 775603E91B27E69A00E7E2BF /* ISRDataHelper.m */; };
+		7756045B1B28111300E7E2BF /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 775604581B28111300E7E2BF /* IATConfig.m */; };
+		7756045C1B28111300E7E2BF /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7756045A1B28111300E7E2BF /* ISRDataHelper.m */; };
+		7756045D1B28114B00E7E2BF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775603AA1B26E60900E7E2BF /* AddressBook.framework */; };
+		775604DE1B281C0500E7E2BF /* do_iFlyVoice_App.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 772308D01B26CCD8007ED948 /* do_iFlyVoice_App.h */; };
+		775604DF1B281C0500E7E2BF /* do_iFlyVoice_SM.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 772308D31B26CCD8007ED948 /* do_iFlyVoice_SM.h */; };
 		A44BC6701AEE005E001580AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC66F1AEE005E001580AA /* main.m */; };
 		A44BC6731AEE005E001580AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6721AEE005E001580AA /* AppDelegate.m */; };
 		A44BC6761AEE005E001580AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6751AEE005E001580AA /* ViewController.m */; };
@@ -62,10 +63,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		A44BC7B01AEE19CC001580AA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				775604DE1B281C0500E7E2BF /* do_iFlyVoice_App.h in CopyFiles */,
+				775604DF1B281C0500E7E2BF /* do_iFlyVoice_SM.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,10 +85,10 @@
 		772308DB1B26CE59007ED948 /* libSunFlower.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSunFlower.a; sourceTree = "<group>"; };
 		775603A91B26DDEF00E7E2BF /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		775603AA1B26E60900E7E2BF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		775603AC1B26F20D00E7E2BF /* IATConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATConfig.h; sourceTree = "<group>"; };
-		775603AD1B26F20D00E7E2BF /* IATConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATConfig.m; sourceTree = "<group>"; };
-		775603E81B27E69A00E7E2BF /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
-		775603E91B27E69A00E7E2BF /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
+		775604571B28111300E7E2BF /* IATConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATConfig.h; sourceTree = "<group>"; };
+		775604581B28111300E7E2BF /* IATConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATConfig.m; sourceTree = "<group>"; };
+		775604591B28111300E7E2BF /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
+		7756045A1B28111300E7E2BF /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
 		A44BC66A1AEE005E001580AA /* Do_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Do_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44BC66E1AEE005E001580AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A44BC66F1AEE005E001580AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -233,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7756045D1B28114B00E7E2BF /* AddressBook.framework in Frameworks */,
 				772308DC1B26CE59007ED948 /* iflyMSC.framework in Frameworks */,
 				772308DD1B26CE59007ED948 /* libSunFlower.a in Frameworks */,
 			);
@@ -244,10 +248,7 @@
 		772308D71B26CE59007ED948 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				775603E81B27E69A00E7E2BF /* ISRDataHelper.h */,
-				775603E91B27E69A00E7E2BF /* ISRDataHelper.m */,
-				775603AC1B26F20D00E7E2BF /* IATConfig.h */,
-				775603AD1B26F20D00E7E2BF /* IATConfig.m */,
+				775603AA1B26E60900E7E2BF /* AddressBook.framework */,
 				772308D81B26CE59007ED948 /* iflyMSC.framework */,
 				772308D91B26CE59007ED948 /* sunflower */,
 			);
@@ -257,6 +258,10 @@
 		772308D91B26CE59007ED948 /* sunflower */ = {
 			isa = PBXGroup;
 			children = (
+				775604571B28111300E7E2BF /* IATConfig.h */,
+				775604581B28111300E7E2BF /* IATConfig.m */,
+				775604591B28111300E7E2BF /* ISRDataHelper.h */,
+				7756045A1B28111300E7E2BF /* ISRDataHelper.m */,
 				775603A91B26DDEF00E7E2BF /* Definition.h */,
 				772308DA1B26CE59007ED948 /* IFlyFlowerCollector.h */,
 				772308DB1B26CE59007ED948 /* libSunFlower.a */,
@@ -267,7 +272,6 @@
 		A44BC6611AEE005E001580AA = {
 			isa = PBXGroup;
 			children = (
-				775603AA1B26E60900E7E2BF /* AddressBook.framework */,
 				CCFAEAC51B00F00C00AED8D5 /* lib */,
 				A44BC66C1AEE005E001580AA /* Do_Test */,
 				A44BC7B31AEE19CD001580AA /* doExtLib */,
@@ -538,8 +542,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775603EB1B27E6BF00E7E2BF /* ISRDataHelper.m in Sources */,
-				775603E71B27D1B200E7E2BF /* IATConfig.m in Sources */,
 				775603E51B27D19C00E7E2BF /* do_iFlyVoice_App.m in Sources */,
 				775603E61B27D19C00E7E2BF /* do_iFlyVoice_SM.m in Sources */,
 				A44BC6761AEE005E001580AA /* ViewController.m in Sources */,
@@ -561,9 +563,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775603AE1B26F20D00E7E2BF /* IATConfig.m in Sources */,
+				7756045B1B28111300E7E2BF /* IATConfig.m in Sources */,
 				772308D51B26CCD8007ED948 /* do_iFlyVoice_App.m in Sources */,
-				775603EA1B27E69A00E7E2BF /* ISRDataHelper.m in Sources */,
+				7756045C1B28111300E7E2BF /* ISRDataHelper.m in Sources */,
 				772308D61B26CCD8007ED948 /* do_iFlyVoice_SM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,6 +670,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/doExtLib/lib",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/doExtLib/lib/sunflower",
+				);
 				INFOPLIST_FILE = Do_Test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -690,6 +697,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/doExtLib/lib",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/doExtLib/lib/sunflower",
 				);
 				INFOPLIST_FILE = Do_Test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -721,6 +733,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/doExtLib/lib/sunflower",
+					"$(PROJECT_DIR)/doExtLib/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -741,6 +754,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/doExtLib/lib/sunflower",
+					"$(PROJECT_DIR)/doExtLib/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
