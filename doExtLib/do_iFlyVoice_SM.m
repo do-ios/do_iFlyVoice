@@ -20,7 +20,7 @@
 #import "IATConfig.h"
 #import "iflyMSC/iflyMSC.h"
 #import "ISRDataHelper.h"
-
+#import "doJsonHelper.h"
 
 @interface do_iFlyVoice_SM()<IFlySpeechRecognizerDelegate,IFlyRecognizerViewDelegate>
 
@@ -34,6 +34,9 @@
 @end
 
 @implementation do_iFlyVoice_SM
+{
+    NSString *_appId;
+}
 #pragma mark - 方法
 #pragma mark - 同步异步方法的实现
 //同步
@@ -51,7 +54,7 @@
     //回调函数名_callbackName
     doInvokeResult *_invokeResult = [[doInvokeResult alloc] init];
     //_invokeResult设置返回值
-    
+    _appId = [doJsonHelper GetOneText:_dictParas :@"appId" :@""];
     
     [self initialization];
     
@@ -127,7 +130,7 @@
     [IFlySetting setLogFilePath:cachePath];
     
     //创建语音配置,appid必须要传入，仅执行一次则可
-    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",APPID_VALUE];
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",_appId];
     
     //所有服务启动前，需要确保执行createUtility
     [IFlySpeechUtility createUtility:initString];
