@@ -36,6 +36,10 @@
 @implementation do_iFlyVoice_SM
 {
     NSString *_appId;
+    
+    id<doIScriptEngine> _scritEngine;
+    NSString *_callbackName;
+    doInvokeResult *_invokeResult
 }
 #pragma mark - 方法
 #pragma mark - 同步异步方法的实现
@@ -47,12 +51,12 @@
     //异步耗时操作，但是不需要启动线程，框架会自动加载一个后台线程处理这个函数
     NSDictionary *_dictParas = [parms objectAtIndex:0];
     //参数字典_dictParas
-    id<doIScriptEngine> _scritEngine = [parms objectAtIndex:1];
+    _scritEngine = [parms objectAtIndex:1];
     //自己的代码实现
     
-    NSString *_callbackName = [parms objectAtIndex:2];
+    _callbackName = [parms objectAtIndex:2];
     //回调函数名_callbackName
-    doInvokeResult *_invokeResult = [[doInvokeResult alloc] init];
+    _invokeResult = [[doInvokeResult alloc] init];
     //_invokeResult设置返回值
     _appId = [doJsonHelper GetOneText:_dictParas :@"appId" :@""];
     
@@ -60,7 +64,6 @@
     
     [self startRecognizer];
     
-    [_scritEngine Callback:_callbackName :_invokeResult];
 }
 
 - (void)startRecognizer
@@ -209,14 +212,12 @@
 {
     NSMutableString *result = [[NSMutableString alloc] init];
     NSDictionary *dic = [resultArray objectAtIndex:0];
-    
     for (NSString *key in dic) {
         [result appendFormat:@"%@",key];
     }
     NSLog(@"result  =%@",result);
-    doInvokeResult *_invokeResult = [[doInvokeResult alloc] init];
     [_invokeResult SetResultText:result];
-    [self.EventCenter FireEvent:@"open" :_invokeResult ];
+    [_scritEngine Callback:_callbackName :_invokeResult];
 }
 
 
