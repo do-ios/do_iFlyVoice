@@ -39,7 +39,7 @@
     
     id<doIScriptEngine> _scritEngine;
     NSString *_callbackName;
-    doInvokeResult *_invokeResult
+    doInvokeResult *_invokeResult;
 }
 #pragma mark - 方法
 #pragma mark - 同步异步方法的实现
