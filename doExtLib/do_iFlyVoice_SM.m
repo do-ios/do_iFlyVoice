@@ -58,7 +58,8 @@
     //回调函数名_callbackName
     _invokeResult = [[doInvokeResult alloc] init];
     //_invokeResult设置返回值
-    _appId = [doJsonHelper GetOneText:_dictParas :@"appId" :@""];
+    _appId = @"558a8df5";
+//    _appId = @"55768e1a";
     
     [self initialization];
     
