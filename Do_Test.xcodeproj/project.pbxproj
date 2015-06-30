@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77465E5E1B40D4EB00AEACEE /* iflyMSC in Frameworks */ = {isa = PBXBuildFile; fileRef = 7756065C1B296E6100E7E2BF /* iflyMSC */; };
 		77465E961B40D68F00AEACEE /* do_iFlyVoice_App.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E871B40D68F00AEACEE /* do_iFlyVoice_App.m */; };
 		77465E971B40D68F00AEACEE /* do_iFlyVoice_SM.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E8A1B40D68F00AEACEE /* do_iFlyVoice_SM.m */; };
 		77465E981B40D68F00AEACEE /* do_Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 77465E8B1B40D68F00AEACEE /* do_Test.json */; };
 		77465E991B40D68F00AEACEE /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77465E8D1B40D68F00AEACEE /* iflyMSC.framework */; };
 		77465E9A1B40D68F00AEACEE /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E911B40D68F00AEACEE /* IATConfig.m */; };
 		77465E9B1B40D68F00AEACEE /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E941B40D68F00AEACEE /* ISRDataHelper.m */; };
-		77465E9C1B40D68F00AEACEE /* libSunFlower.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77465E951B40D68F00AEACEE /* libSunFlower.a */; };
 		77465E9E1B40D6D900AEACEE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77465E9D1B40D6D900AEACEE /* AddressBook.framework */; };
+		77DEECB31B427F7800426317 /* libSunFlower.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DEECB21B427F7800426317 /* libSunFlower.a */; };
+		77DEECB41B4280D100426317 /* libSunFlower.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DEECB21B427F7800426317 /* libSunFlower.a */; };
+		77DEECB51B4280DC00426317 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77465E9D1B40D6D900AEACEE /* AddressBook.framework */; };
+		77DEECB71B4280FB00426317 /* iflyMSC in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DEECB61B4280FB00426317 /* iflyMSC */; };
 		A44BC6701AEE005E001580AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC66F1AEE005E001580AA /* main.m */; };
 		A44BC6731AEE005E001580AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6721AEE005E001580AA /* AppDelegate.m */; };
 		A44BC6761AEE005E001580AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6751AEE005E001580AA /* ViewController.m */; };
@@ -80,9 +82,9 @@
 		77465E921B40D68F00AEACEE /* IFlyFlowerCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlyFlowerCollector.h; sourceTree = "<group>"; };
 		77465E931B40D68F00AEACEE /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
 		77465E941B40D68F00AEACEE /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
-		77465E951B40D68F00AEACEE /* libSunFlower.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSunFlower.a; sourceTree = "<group>"; };
 		77465E9D1B40D6D900AEACEE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		7756065C1B296E6100E7E2BF /* iflyMSC */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = iflyMSC; path = doExtLib/lib/iflyMSC.framework/iflyMSC; sourceTree = "<group>"; };
+		77DEECB21B427F7800426317 /* libSunFlower.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSunFlower.a; sourceTree = "<group>"; };
+		77DEECB61B4280FB00426317 /* iflyMSC */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = iflyMSC; path = doExtLib/lib/iflyMSC.framework/iflyMSC; sourceTree = "<group>"; };
 		A44BC66A1AEE005E001580AA /* Do_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Do_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44BC66E1AEE005E001580AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A44BC66F1AEE005E001580AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -201,7 +203,6 @@
 				CCFAEAC11B00EF6300AED8D5 /* libicucore.dylib in Frameworks */,
 				CCFAEABF1B00EF4800AED8D5 /* libstdc++.dylib in Frameworks */,
 				CCFAEABD1B00EF2000AED8D5 /* libz.dylib in Frameworks */,
-				77465E9C1B40D68F00AEACEE /* libSunFlower.a in Frameworks */,
 				CCFAEABB1B00EF0C00AED8D5 /* CoreTelephony.framework in Frameworks */,
 				CCFAEAB91B00EED800AED8D5 /* AudioToolbox.framework in Frameworks */,
 				CCFAEAB71B00EE2F00AED8D5 /* MessageUI.framework in Frameworks */,
@@ -210,6 +211,7 @@
 				CCFAEAB31B00EE0700AED8D5 /* libsqlite3.dylib in Frameworks */,
 				CCFAEAB11B00EDF600AED8D5 /* libxml2.dylib in Frameworks */,
 				CCFAEAAF1B00EDE200AED8D5 /* libiconv.dylib in Frameworks */,
+				77DEECB31B427F7800426317 /* libSunFlower.a in Frameworks */,
 				77465E991B40D68F00AEACEE /* iflyMSC.framework in Frameworks */,
 				CCFAEAAD1B00EDBD00AED8D5 /* MobileCoreServices.framework in Frameworks */,
 				CCFAEAAB1B00EDAB00AED8D5 /* CFNetwork.framework in Frameworks */,
@@ -229,7 +231,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77465E5E1B40D4EB00AEACEE /* iflyMSC in Frameworks */,
+				77DEECB71B4280FB00426317 /* iflyMSC in Frameworks */,
+				77DEECB51B4280DC00426317 /* AddressBook.framework in Frameworks */,
+				77DEECB41B4280D100426317 /* libSunFlower.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,13 +266,13 @@
 		77465E8E1B40D68F00AEACEE /* sunflower */ = {
 			isa = PBXGroup;
 			children = (
+				77DEECB21B427F7800426317 /* libSunFlower.a */,
 				77465E8F1B40D68F00AEACEE /* Definition.h */,
 				77465E901B40D68F00AEACEE /* IATConfig.h */,
 				77465E911B40D68F00AEACEE /* IATConfig.m */,
 				77465E921B40D68F00AEACEE /* IFlyFlowerCollector.h */,
 				77465E931B40D68F00AEACEE /* ISRDataHelper.h */,
 				77465E941B40D68F00AEACEE /* ISRDataHelper.m */,
-				77465E951B40D68F00AEACEE /* libSunFlower.a */,
 			);
 			path = sunflower;
 			sourceTree = "<group>";
@@ -276,7 +280,7 @@
 		A44BC6611AEE005E001580AA = {
 			isa = PBXGroup;
 			children = (
-				7756065C1B296E6100E7E2BF /* iflyMSC */,
+				77DEECB61B4280FB00426317 /* iflyMSC */,
 				CCFAEAC51B00F00C00AED8D5 /* lib */,
 				A44BC66C1AEE005E001580AA /* Do_Test */,
 				A44BC66B1AEE005E001580AA /* Products */,
