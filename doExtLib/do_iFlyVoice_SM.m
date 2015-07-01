@@ -49,7 +49,6 @@
 - (void)open:(NSArray *)parms
 {
     //异步耗时操作，但是不需要启动线程，框架会自动加载一个后台线程处理这个函数
-    NSDictionary *_dictParas = [parms objectAtIndex:0];
     //参数字典_dictParas
     _scritEngine = [parms objectAtIndex:1];
     //自己的代码实现
@@ -59,12 +58,12 @@
     _invokeResult = [[doInvokeResult alloc] init];
     //_invokeResult设置返回值
     _appId = @"558a8df5";
-//    _appId = @"55768e1a";
-    
+
     [self initialization];
     
-    [self startRecognizer];
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self startRecognizer];
+    });
 }
 
 - (void)startRecognizer

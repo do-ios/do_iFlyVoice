@@ -18,6 +18,13 @@
 		77DEECB41B4280D100426317 /* libSunFlower.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DEECB21B427F7800426317 /* libSunFlower.a */; };
 		77DEECB51B4280DC00426317 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77465E9D1B40D6D900AEACEE /* AddressBook.framework */; };
 		77DEECB71B4280FB00426317 /* iflyMSC in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DEECB61B4280FB00426317 /* iflyMSC */; };
+		77F376031B43C8E70091D3B7 /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E911B40D68F00AEACEE /* IATConfig.m */; };
+		77F376061B43C8E70091D3B7 /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E941B40D68F00AEACEE /* ISRDataHelper.m */; };
+		77F376241B43CA920091D3B7 /* do_iFlyVoice_App.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77465E861B40D68F00AEACEE /* do_iFlyVoice_App.h */; };
+		77F376251B43CA920091D3B7 /* do_iFlyVoice_ISM.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77465E881B40D68F00AEACEE /* do_iFlyVoice_ISM.h */; };
+		77F376261B43CA920091D3B7 /* do_iFlyVoice_SM.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77465E891B40D68F00AEACEE /* do_iFlyVoice_SM.h */; };
+		77F376291B43CB3D0091D3B7 /* do_iFlyVoice_App.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E871B40D68F00AEACEE /* do_iFlyVoice_App.m */; };
+		77F3762A1B43CB3D0091D3B7 /* do_iFlyVoice_SM.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E8A1B40D68F00AEACEE /* do_iFlyVoice_SM.m */; };
 		A44BC6701AEE005E001580AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC66F1AEE005E001580AA /* main.m */; };
 		A44BC6731AEE005E001580AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6721AEE005E001580AA /* AppDelegate.m */; };
 		A44BC6761AEE005E001580AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6751AEE005E001580AA /* ViewController.m */; };
@@ -63,6 +70,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				77F376241B43CA920091D3B7 /* do_iFlyVoice_App.h in CopyFiles */,
+				77F376251B43CA920091D3B7 /* do_iFlyVoice_ISM.h in CopyFiles */,
+				77F376261B43CA920091D3B7 /* do_iFlyVoice_SM.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +241,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77DEECB71B4280FB00426317 /* iflyMSC in Frameworks */,
 				77DEECB51B4280DC00426317 /* AddressBook.framework in Frameworks */,
+				77DEECB71B4280FB00426317 /* iflyMSC in Frameworks */,
 				77DEECB41B4280D100426317 /* libSunFlower.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +571,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F376291B43CB3D0091D3B7 /* do_iFlyVoice_App.m in Sources */,
+				77F3762A1B43CB3D0091D3B7 /* do_iFlyVoice_SM.m in Sources */,
+				77F376031B43C8E70091D3B7 /* IATConfig.m in Sources */,
+				77F376061B43C8E70091D3B7 /* ISRDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
