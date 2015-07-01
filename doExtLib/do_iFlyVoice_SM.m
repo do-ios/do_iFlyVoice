@@ -35,11 +35,11 @@
 
 @implementation do_iFlyVoice_SM
 {
-    NSString *_appId;
-    
     id<doIScriptEngine> _scritEngine;
     NSString *_callbackName;
     doInvokeResult *_invokeResult;
+    
+    NSMutableDictionary *_totalResult;
 }
 #pragma mark - 方法
 #pragma mark - 同步异步方法的实现
@@ -57,7 +57,11 @@
     //回调函数名_callbackName
     _invokeResult = [[doInvokeResult alloc] init];
     //_invokeResult设置返回值
-    _appId = @"558a8df5";
+
+    _totalResult = [NSMutableDictionary dictionary];
+    [_totalResult setObject:@"" forKey:@"result"];
+    [_totalResult setObject:@"" forKey:@"spell"];
+    [_totalResult setObject:@"" forKey:@"errorMsg"];
 
     [self initialization];
     
@@ -187,7 +191,10 @@
     }else {
         NSLog(@"errorCode:%d",[error errorCode]);
     }
+    [_totalResult setObject:[error errorDesc] forKey:@"errorMsg"];
     
+    [_invokeResult SetResultNode:_totalResult];
+    [_scritEngine Callback:_callbackName :_invokeResult];
 }
 
 - (void)onResults:(NSArray *)results isLast:(BOOL)isLast
@@ -215,9 +222,17 @@
     for (NSString *key in dic) {
         [result appendFormat:@"%@",key];
     }
+
+    NSMutableString *pinyin = [result mutableCopy];
+    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformMandarinLatin, NO);
+    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripDiacritics, NO);
+    
+    NSString *re = [NSString stringWithFormat:@"%@%@",[_totalResult objectForKey:@"result"], result];
+    NSString *spell = [NSString stringWithFormat:@"%@%@",[_totalResult objectForKey:@"spell"], pinyin];
+    [_totalResult setObject:re forKey:@"result"];
+    [_totalResult setObject:spell forKey:@"spell"];
+
     NSLog(@"result  =%@",result);
-    [_invokeResult SetResultText:result];
-    [_scritEngine Callback:_callbackName :_invokeResult];
 }
 
 
