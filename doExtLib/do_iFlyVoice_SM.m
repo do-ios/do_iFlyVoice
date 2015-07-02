@@ -171,9 +171,8 @@
 - (void) onError:(IFlySpeechError *) error
 {
     NSLog(@"%s",__func__);
-    
-    if ([IATConfig sharedInstance].haveView == NO ) {
-        NSString *text ;
+    NSString *text ;
+    if ([IATConfig sharedInstance].haveView == YES ) {
         
         if (self.isCanceled) {
             text = @"识别取消";
@@ -182,7 +181,7 @@
             if (_result.length == 0) {
                 text = @"无识别结果";
             }else {
-                text = @"识别成功";
+                text = @"";
             }
         }else {
             text = [NSString stringWithFormat:@"发生错误：%d %@", error.errorCode,error.errorDesc];
@@ -190,8 +189,9 @@
         }
     }else {
         NSLog(@"errorCode:%d",[error errorCode]);
+        text = @"";
     }
-    [_totalResult setObject:[error errorDesc] forKey:@"errorMsg"];
+    [_totalResult setObject:text forKey:@"errorMsg"];
     
     [_invokeResult SetResultNode:_totalResult];
     [_scritEngine Callback:_callbackName :_invokeResult];
@@ -222,7 +222,7 @@
     for (NSString *key in dic) {
         [result appendFormat:@"%@",key];
     }
-
+    _result =[NSString stringWithFormat:@"%@",result];
     NSMutableString *pinyin = [result mutableCopy];
     CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformMandarinLatin, NO);
     CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripDiacritics, NO);
