@@ -13,5 +13,9 @@
 //实现同步或异步方法，parms中包含了所需用的属性
 @required
 - (void)open:(NSArray *)parms;
+- (void)pause:(NSArray *)parms;
+- (void)resume:(NSArray *)parms;
+- (void)speak:(NSArray *)parms;
+- (void)stop:(NSArray *)parms;
 
 @end

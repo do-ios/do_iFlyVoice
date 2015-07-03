@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B6C563C1B4646F300D2DBF9 /* TTSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6C563B1B4646F300D2DBF9 /* TTSConfig.m */; };
 		77465E961B40D68F00AEACEE /* do_iFlyVoice_App.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E871B40D68F00AEACEE /* do_iFlyVoice_App.m */; };
 		77465E971B40D68F00AEACEE /* do_iFlyVoice_SM.m in Sources */ = {isa = PBXBuildFile; fileRef = 77465E8A1B40D68F00AEACEE /* do_iFlyVoice_SM.m */; };
 		77465E981B40D68F00AEACEE /* do_Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 77465E8B1B40D68F00AEACEE /* do_Test.json */; };
@@ -79,6 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B6C563A1B4646F300D2DBF9 /* TTSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSConfig.h; sourceTree = "<group>"; };
+		3B6C563B1B4646F300D2DBF9 /* TTSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSConfig.m; sourceTree = "<group>"; };
 		77465E861B40D68F00AEACEE /* do_iFlyVoice_App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = do_iFlyVoice_App.h; sourceTree = "<group>"; };
 		77465E871B40D68F00AEACEE /* do_iFlyVoice_App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = do_iFlyVoice_App.m; sourceTree = "<group>"; };
 		77465E881B40D68F00AEACEE /* do_iFlyVoice_ISM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = do_iFlyVoice_ISM.h; sourceTree = "<group>"; };
@@ -115,7 +118,7 @@
 		A44BC69C1AEE008D001580AA /* doScriptEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doScriptEngine.m; sourceTree = "<group>"; };
 		A44BC69D1AEE008D001580AA /* doService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doService.h; sourceTree = "<group>"; };
 		A44BC69E1AEE008D001580AA /* doService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doService.m; sourceTree = "<group>"; };
-		A44BC7B21AEE19CC001580AA /* libdoExtLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdoExtLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A44BC7B21AEE19CC001580AA /* libdoiFlyVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdoiFlyVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1195AB1B147F7C00583148 /* doAssetLaunchImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = doAssetLaunchImage.h; path = Header/doAssetLaunchImage.h; sourceTree = "<group>"; };
 		CC1195AC1B147F7C00583148 /* doCallBackTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = doCallBackTask.h; path = Header/doCallBackTask.h; sourceTree = "<group>"; };
 		CC1195AD1B147F7C00583148 /* doDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = doDefines.h; path = Header/doDefines.h; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				77DEECB21B427F7800426317 /* libSunFlower.a */,
+				3B6C563A1B4646F300D2DBF9 /* TTSConfig.h */,
+				3B6C563B1B4646F300D2DBF9 /* TTSConfig.m */,
 				77465E8F1B40D68F00AEACEE /* Definition.h */,
 				77465E901B40D68F00AEACEE /* IATConfig.h */,
 				77465E911B40D68F00AEACEE /* IATConfig.m */,
@@ -301,7 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				A44BC66A1AEE005E001580AA /* Do_Test.app */,
-				A44BC7B21AEE19CC001580AA /* libdoExtLib.a */,
+				A44BC7B21AEE19CC001580AA /* libdoiFlyVoice.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -492,7 +497,7 @@
 			);
 			name = doExtLib;
 			productName = doExtLib;
-			productReference = A44BC7B21AEE19CC001580AA /* libdoExtLib.a */;
+			productReference = A44BC7B21AEE19CC001580AA /* libdoiFlyVoice.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -575,6 +580,7 @@
 				77F3762A1B43CB3D0091D3B7 /* do_iFlyVoice_SM.m in Sources */,
 				77F376031B43C8E70091D3B7 /* IATConfig.m in Sources */,
 				77F376061B43C8E70091D3B7 /* ISRDataHelper.m in Sources */,
+				3B6C563C1B4646F300D2DBF9 /* TTSConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,7 +753,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = doiFlyVoice;
 				SKIP_INSTALL = YES;
 				SYMROOT = build;
 			};
@@ -769,7 +775,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = doiFlyVoice;
 				SKIP_INSTALL = YES;
 				SYMROOT = build;
 			};

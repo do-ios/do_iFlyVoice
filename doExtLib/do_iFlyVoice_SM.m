@@ -21,11 +21,13 @@
 #import "iflyMSC/iflyMSC.h"
 #import "ISRDataHelper.h"
 #import "doJsonHelper.h"
+#import "TTSConfig.h"
 
-@interface do_iFlyVoice_SM()<IFlySpeechRecognizerDelegate,IFlyRecognizerViewDelegate>
+@interface do_iFlyVoice_SM()<IFlySpeechRecognizerDelegate,IFlyRecognizerViewDelegate,IFlySpeechSynthesizerDelegate>
 
 @property (nonatomic, strong) NSString *pcmFilePath;//音频文件路径
 @property (nonatomic, strong) IFlySpeechRecognizer *iFlySpeechRecognizer;//不带界面的识别对象
+@property (nonatomic, strong) IFlySpeechSynthesizer * iFlySpeechSynthesizer;
 @property (nonatomic, strong) IFlyRecognizerView *iflyRecognizerView;//带界面的识别对象
 @property (nonatomic, strong) IFlyDataUploader *uploader;//数据上传对象
 @property (nonatomic, strong) NSString * result;
@@ -69,7 +71,34 @@
         [self startRecognizer];
     });
 }
+//同步
+- (void)pause:(NSArray *)parms
+{
+    [_iFlySpeechSynthesizer pauseSpeaking];
+}
+- (void)resume:(NSArray *)parms
+{
+    [_iFlySpeechSynthesizer resumeSpeaking];
+}
+- (void)speak:(NSArray *)parms
+{
+    [self initialization];
+    _scritEngine = [parms objectAtIndex:1];
+    NSDictionary *_dictParas = [parms objectAtIndex:0];
+    NSString *speakText = [doJsonHelper GetOneText:_dictParas :@"text" :@""];
+    NSString *speakRole = [doJsonHelper GetOneText:_dictParas :@"role" :@""];
+    [self initSynthesizer:speakRole];
+    _iFlySpeechSynthesizer.delegate = self;
+    if (speakText.length <= 0) {
 
+    }
+    [_iFlySpeechSynthesizer startSpeaking:speakText];
+}
+- (void)stop:(NSArray *)parms
+{
+    //自己的代码实现
+    [_iFlySpeechSynthesizer stopSpeaking];
+}
 - (void)startRecognizer
 {
     if(_iflyRecognizerView == nil)
@@ -143,6 +172,49 @@
     [IFlySpeechUtility createUtility:initString];
 }
 
+#pragma mark - 设置合成参数
+- (void)initSynthesizer:(NSString *)vcnName
+{
+    TTSConfig *instance = [TTSConfig sharedInstance];
+    if (instance == nil) {
+        return;
+    }
+    
+    //合成服务单例
+    if (_iFlySpeechSynthesizer == nil) {
+        _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
+    }
+    
+    _iFlySpeechSynthesizer.delegate = self;
+    
+    
+    
+    //设置语速1-100
+    [_iFlySpeechSynthesizer setParameter:instance.speed forKey:[IFlySpeechConstant SPEED]];
+    
+    //设置音量1-100
+    [_iFlySpeechSynthesizer setParameter:instance.volume forKey:[IFlySpeechConstant VOLUME]];
+    
+    //设置音调1-100
+    [_iFlySpeechSynthesizer setParameter:instance.pitch forKey:[IFlySpeechConstant PITCH]];
+    
+    /**
+     下面引擎类型无需设置
+     设置引擎类型，本demo仅支持在线方式
+     [_iFlySpeechSynthesizer setParameter:instance.engineType forKey:[IFlySpeechConstant ENGINE_TYPE]];
+     ****/
+    
+    
+    //设置采样率
+    [_iFlySpeechSynthesizer setParameter:instance.sampleRate forKey:[IFlySpeechConstant SAMPLE_RATE]];
+    
+    
+    //设置发音人
+    instance.vcnName = vcnName;
+    [_iFlySpeechSynthesizer setParameter:instance.vcnName forKey:[IFlySpeechConstant VOICE_NAME]];
+    
+}
+
 #pragma mark - recognizer delegate
 
 /**
@@ -161,7 +233,10 @@
     NSLog(@"onEndOfSpeech");
 }
 
-
+- (void)onCompleted:(IFlySpeechError *)error
+{
+    
+}
 /**
  听写结束回调（注：无论听写是否正确都会回调）
  error.errorCode =
