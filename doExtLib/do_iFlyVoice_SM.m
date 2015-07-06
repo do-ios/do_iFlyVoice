@@ -214,6 +214,29 @@
     [_iFlySpeechSynthesizer setParameter:instance.vcnName forKey:[IFlySpeechConstant VOICE_NAME]];
     
 }
+#pragma -mark
+#pragma mark IFlySpeechSynthesizerDelegate的代理方法
+- (void)onCompleted:(IFlySpeechError *)error
+{
+    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+    [self.EventCenter FireEvent:@"finished" :invokeResult];
+}
+
+- (void)onSpeakBegin
+{
+    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+    [self.EventCenter FireEvent:@"bengin" :invokeResult];
+}
+- (void)onSpeakPaused
+{
+    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+    [self.EventCenter FireEvent:@"paused" :invokeResult];
+}
+- (void)onSpeakResumed
+{
+    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+    [self.EventCenter FireEvent:@"resumed" :invokeResult];
+}
 
 #pragma mark - recognizer delegate
 
@@ -233,10 +256,6 @@
     NSLog(@"onEndOfSpeech");
 }
 
-- (void)onCompleted:(IFlySpeechError *)error
-{
-    
-}
 /**
  听写结束回调（注：无论听写是否正确都会回调）
  error.errorCode =
@@ -261,12 +280,13 @@
         }else {
             text = [NSString stringWithFormat:@"发生错误：%d %@", error.errorCode,error.errorDesc];
             NSLog(@"%@",text);
+            [_invokeResult SetError:error.description];
         }
     }else {
         NSLog(@"errorCode:%d",[error errorCode]);
         text = @"";
+        [_invokeResult SetError:error.description];
     }
-    [_totalResult setObject:text forKey:@"errorMsg"];
     
     [_invokeResult SetResultNode:_totalResult];
     [_scritEngine Callback:_callbackName :_invokeResult];
