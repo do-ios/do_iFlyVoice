@@ -227,16 +227,16 @@
     doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
     [self.EventCenter FireEvent:@"bengin" :invokeResult];
 }
-- (void)onSpeakPaused
-{
-    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
-    [self.EventCenter FireEvent:@"paused" :invokeResult];
-}
-- (void)onSpeakResumed
-{
-    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
-    [self.EventCenter FireEvent:@"resumed" :invokeResult];
-}
+//- (void)onSpeakPaused
+//{
+//    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+//    [self.EventCenter FireEvent:@"paused" :invokeResult];
+//}
+//- (void)onSpeakResumed
+//{
+//    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+//    [self.EventCenter FireEvent:@"resumed" :invokeResult];
+//}
 
 #pragma mark - recognizer delegate
 
