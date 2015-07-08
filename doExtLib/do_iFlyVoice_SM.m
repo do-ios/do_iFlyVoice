@@ -63,7 +63,7 @@
     _totalResult = [NSMutableDictionary dictionary];
     [_totalResult setObject:@"" forKey:@"result"];
     [_totalResult setObject:@"" forKey:@"spell"];
-    [_totalResult setObject:@"" forKey:@"errorMsg"];
+//    [_totalResult setObject:@"" forKey:@"errorMsg"];
 
     [self initialization];
     
