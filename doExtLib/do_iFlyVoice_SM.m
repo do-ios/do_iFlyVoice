@@ -225,7 +225,7 @@
 - (void)onSpeakBegin
 {
     doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
-    [self.EventCenter FireEvent:@"bengin" :invokeResult];
+    [self.EventCenter FireEvent:@"begin" :invokeResult];
 }
 //- (void)onSpeakPaused
 //{
