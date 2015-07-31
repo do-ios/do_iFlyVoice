@@ -42,6 +42,7 @@
     doInvokeResult *_invokeResult;
     
     NSMutableDictionary *_totalResult;
+    BOOL _isFinish;
 }
 #pragma mark - 方法
 #pragma mark - 同步异步方法的实现
@@ -98,6 +99,8 @@
 {
     //自己的代码实现
     [_iFlySpeechSynthesizer stopSpeaking];
+//    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+//    [self.EventCenter FireEvent:@"finished" :invokeResult];
 }
 - (void)startRecognizer
 {
@@ -218,8 +221,10 @@
 #pragma mark IFlySpeechSynthesizerDelegate的代理方法
 - (void)onCompleted:(IFlySpeechError *)error
 {
-    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
-    [self.EventCenter FireEvent:@"finished" :invokeResult];
+    if (_isFinish) {
+        doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
+        [self.EventCenter FireEvent:@"finished" :invokeResult];
+    }
 }
 
 - (void)onSpeakBegin
@@ -237,9 +242,17 @@
 //    doInvokeResult *invokeResult = [[doInvokeResult alloc]init:self.UniqueKey];
 //    [self.EventCenter FireEvent:@"resumed" :invokeResult];
 //}
-
 #pragma mark - recognizer delegate
-
+- (void)onSpeakProgress:(int)progress
+{
+    if (progress == 100) {
+        _isFinish = YES;
+    }
+    else
+    {
+        _isFinish = NO;
+    }
+}
 /**
  开始识别回调
  ****/
